@@ -1,10 +1,12 @@
 # Never-Consent
-Never consent to any GDPR consent management platform.
+Never consent to any GDPR consent management platform. All permissions are immediatly refused.
+
+This extension completes uBlock, AdBlock & co, they don't serve the same objectives. We promote usage of adblockers in completion.
 
 Refuse consent to those platforms :
-- Quantcast
-- Didomi
-- ConsentManager
+- Quantcast (https://www.quantcast.com/)
+- Didomi (https://www.didomi.io)
+- ConsentManager (https://www.consentmanager.net/)
 - Osano cookieconsent
 
 No more "do you accept ?" ! 

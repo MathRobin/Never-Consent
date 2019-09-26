@@ -1,26 +1,37 @@
-function neverConsent (mutations) {
-  // quantcast
+// quantcast
+function kickQuantcast(mutations) {
   const qcReady = mutations.some(mutation => {
     return mutation.target.firstChild &&
       mutation.target.firstChild.classList &&
-      mutation.target.firstChild.classList.contains("qc-cmp-ui-container")
+      mutation.target.firstChild.classList.contains('qc-cmp-ui-container')
   });
+
   if (qcReady) {
-    window.__cmpui("setAndSaveAllConsent", false);
+    window.__cmpui('setAndSaveAllConsent', false);
   }
-
-  // Didomi
-  if (!!window.Didomi) {
-    window.Didomi.setUserDisagreeToAll();
-  }
-
-  // consentmanager
-  if (!!window.cmpmngr) {
-    window.cmpmngr.setConsentViaBtn(0);
-  }
-
-  // https://cookieconsent.osano.com/documentation/javascript-api/
 }
 
-const observer = new MutationObserver(neverConsent);
+const observer = new MutationObserver(kickQuantcast);
 observer.observe(document.body, {childList: true});
+
+var kickCmpmngr = 0;
+
+(function() {
+  var kick = setInterval(function () {
+    // Didomi
+    if (window.Didomi) {
+      window.Didomi.setUserDisagreeToAll();
+      clearInterval(kick);
+    }
+
+    // consentmanager
+    if (!!window.cmpmngr) {
+      kickCmpmngr++;
+      window.cmpmngr.setConsentViaBtn(0);
+      if (5 === kickCmpmngr) {
+        clearInterval(kick);
+      }
+    }
+  }, 100);
+})();
+
