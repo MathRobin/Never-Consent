@@ -7,11 +7,14 @@ Refuse consent to those platforms :
 - Quantcast (https://www.quantcast.com/)
 - Didomi (https://www.didomi.io)
 - ConsentManager (https://www.consentmanager.net/)
-- Osano cookieconsent
+- Osano cookieconsent (https://cookieconsent.osano.com/)
+- OneTrust (https://www.onetrust.com/products/cookies/)
 
 No more "do you accept ?" ! 
 
 Based on the good ***[GDPNope](https://chrome.google.com/webstore/detail/gdpnope/kaobbaeanleebomkmkleekoeefldjcpi?hl=es)***.
+
+Lot of sites have made their own system, it's complicated to manage them all. But by auto-refusing most of the majors CSP providers we try to do the most we can. 
 
 ## Contribute
 
