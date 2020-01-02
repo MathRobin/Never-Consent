@@ -16,7 +16,7 @@ observer.observe(document.body, {childList: true});
 
 var kickCmpmngr = 0;
 
-(function() {
+(function () {
   var kick = setInterval(function () {
     // Didomi
     if (!!window.Didomi) {
@@ -26,7 +26,7 @@ var kickCmpmngr = 0;
 
     // consentmanager
     if (!!window.cmpmngr) {
-      kickCmpmngr++;
+      kickCmpmngr += 1;
       window.cmpmngr.setConsentViaBtn(0);
 
       // Because they are like a man, they have to heard too much times "nope" to understand "nope"
@@ -38,16 +38,15 @@ var kickCmpmngr = 0;
     // cookieconsent
     document.cookie = (document.cookie && document.cookie.length ? ';' : '') + 'cookieconsent_status=deny';
     if (!!window.cookieconsent) {
-      // window.cmpmngr.setConsentViaBtn(0);
-
-      // Because they are like a drunk boy, they have to heard a lot of time "nope" to understand "nope"
       if (document.cookie.indexOf('cookieconsent_status=deny')) {
         clearInterval(kick);
       }
     }
-
-    // OneTrust
-
   }, 100);
+
+  // perf pitfall - resign after 90 seconds if nothing managed or detected
+  setTimeout(function () {
+    clearInterval(kick);
+  }, 90000);
 })();
 
