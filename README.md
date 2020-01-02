@@ -13,10 +13,12 @@ No more "do you accept ?" !
 
 ## Install it
 
-For Chrome and look-a-like: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
-For Firefox: soonly
-For Edge: not planned (help needed, don't have any windows to test)
-For Safari: not planned (help needed, don't have any apple device to test)
+- For Chrome and look-a-like: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
+- For Firefox: soonly
+- For Edge: not planned (help needed, don't have any windows to test)
+- For Safari: not planned (help needed, don't have any apple device to test)
+
+## Thanks to
 
 Based on the good ***[GDPNope](https://chrome.google.com/webstore/detail/gdpnope/kaobbaeanleebomkmkleekoeefldjcpi?hl=es)***.
 
