@@ -1,3 +1,9 @@
+# 1.1.0
+
+## Features
+
+  - Added support for Cookie Law Info
+
 # 1.0.1
 
 ## Bug fixes

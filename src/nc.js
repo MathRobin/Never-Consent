@@ -1,6 +1,6 @@
 // quantcast
 function kickQuantcast(mutations) {
-  const qcReady = mutations.some(mutation => {
+  var qcReady = mutations.some(mutation => {
     return mutation.target.firstChild &&
       mutation.target.firstChild.classList &&
       mutation.target.firstChild.classList.contains('qc-cmp-ui-container')
@@ -11,12 +11,21 @@ function kickQuantcast(mutations) {
   }
 }
 
-const observer = new MutationObserver(kickQuantcast);
+var observer = new MutationObserver(kickQuantcast);
 observer.observe(document.body, {childList: true});
 
-var kickCmpmngr = 0;
+function registerCookie(newCookie) {
+  if (!document.cookie.indexOf(newCookie)) {
+    document.cookie = newCookie;
+  }
+}
+
+registerCookie('cookieconsent_status=deny');
+registerCookie('notice_preferences=0:');
+registerCookie('notice_gdpr_prefs=0:');
 
 (function () {
+  var kickCmpmngr = 0;
   var kick = setInterval(function () {
     // Didomi
     if (!!window.Didomi) {
@@ -35,12 +44,9 @@ var kickCmpmngr = 0;
       }
     }
 
-    // cookieconsent
-    document.cookie = (document.cookie && document.cookie.length ? ';' : '') + 'cookieconsent_status=deny';
-    if (!!window.cookieconsent) {
-      if (document.cookie.indexOf('cookieconsent_status=deny')) {
-        clearInterval(kick);
-      }
+    // cookielawinfo
+    if (!!window.CLI && !!window.CLI.reject_close) {
+      CLI.reject_close();
     }
   }, 100);
 

@@ -8,6 +8,7 @@ Refuse consent to those platforms :
 - Didomi (https://www.didomi.io)
 - ConsentManager (https://www.consentmanager.net/)
 - Osano cookieconsent (https://cookieconsent.osano.com/)
+- Cookie Law Info (https://www.cookielawinfo.com/)
 
 No more "do you accept ?" !
 
