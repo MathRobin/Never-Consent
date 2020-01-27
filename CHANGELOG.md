@@ -1,3 +1,13 @@
+# 1.2.0
+
+## Features
+
+  - Added support for Crownpeak
+
+## Bug fixes
+
+  - Fix perf pitfall in Cookie Law Info feature
+
 # 1.1.0
 
 ## Features

@@ -9,14 +9,15 @@ Refuse consent to those platforms :
 - ConsentManager (https://www.consentmanager.net/)
 - Osano cookieconsent (https://cookieconsent.osano.com/)
 - Cookie Law Info (https://www.cookielawinfo.com/)
+- Crownpeak (https://www.crownpeak.com/)
 
 No more "do you accept ?" !
 
 ## Install it
 
-- For Chrome and look-a-like: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
+- For Chrome and chromium-based: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
 - For Firefox: soonly
-- For Edge: not planned (help needed, don't have any windows to test)
+- For Edge: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
 - For Safari: not planned (help needed, don't have any apple device to test)
 
 ## Thanks to

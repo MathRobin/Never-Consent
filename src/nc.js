@@ -47,6 +47,15 @@ registerCookie('notice_gdpr_prefs=0:');
     // cookielawinfo
     if (!!window.CLI && !!window.CLI.reject_close) {
       CLI.reject_close();
+      clearInterval(kick);
+    }
+
+    // crownpeak
+    if (window.evidon) {
+      document.querySelector('.evidon-consent-button-text').click();
+      window.evidon.preferencesDialog.doWithdrawConsent();
+      document.querySelector('#_evh-button').remove();
+      clearInterval(kick);
     }
   }, 100);
 
