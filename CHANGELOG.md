@@ -1,3 +1,10 @@
+# 1.3.0
+
+## Features
+
+  - Added support for platform behind SeLoger.com (still searching name of the platform)
+  - Testing solution for custom development
+
 # 1.2.0
 
 ## Features
