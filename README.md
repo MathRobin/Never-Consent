@@ -26,6 +26,8 @@ Based on the good ***[GDPNope](https://chrome.google.com/webstore/detail/gdpnope
 
 Lot of sites have made their own system, it's complicated to manage them all. But by auto-refusing most of the majors CSP providers we try to do the most we can. 
 
+I'm working on a solution for sites wich are not using a platform, if you have any ideas, please, submit it. 
+
 ## Contribute
 
 Don't hesitate to clone and PR this repo, or to open an issue with some details on which platform is not supported.

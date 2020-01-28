@@ -11,7 +11,7 @@ function kickQuantcast(mutations) {
   }
 }
 
-var observer = new MutationObserver(kickQuantcast);
+const observer = new MutationObserver(kickQuantcast);
 observer.observe(document.body, {childList: true});
 
 function registerCookie(newCookie) {
@@ -24,9 +24,32 @@ registerCookie('cookieconsent_status=deny');
 registerCookie('notice_preferences=0:');
 registerCookie('notice_gdpr_prefs=0:');
 
+function elClick(selector, callback) {
+  if (document.querySelector(selector)) {
+    document.querySelector(selector).click();
+  }
+  if (callback) {
+    callback();
+  }
+}
+
+function fireEvent(selector, event) {
+  if (document.querySelector(selector)) {
+    const evObj = document.createEvent('Events');
+    evObj.initEvent(event, true, false);
+    document.querySelector(selector).dispatchEvent(evObj);
+  }
+}
+
+const domains = {
+  'www.greenweez.com': '.cookies_banner',
+  'twitter.com': '#banners'
+};
+
 (function () {
-  var kickCmpmngr = 0;
-  var kick = setInterval(function () {
+  let kickCmpmngr = 0;
+
+  const kick = setInterval(function () {
     // Didomi
     if (!!window.Didomi) {
       window.Didomi.setUserDisagreeToAll();
@@ -51,17 +74,39 @@ registerCookie('notice_gdpr_prefs=0:');
     }
 
     // crownpeak
-    if (window.evidon) {
-      document.querySelector('.evidon-consent-button-text').click();
+    if (!!window.evidon) {
+      elClick('.evidon-consent-button-text');
       window.evidon.preferencesDialog.doWithdrawConsent();
       document.querySelector('#_evh-button').remove();
       clearInterval(kick);
     }
+
+    // platform behind seloger.com, french flat search engine, still don't know wich one it is
+    if (!!window.theShield) {
+      fireEvent('#banner-cookie_customize', 'mousedown');
+
+      const switchBoxes = document.querySelectorAll('.slshield-switch input');
+
+      if (switchBoxes.length) {
+        switchBoxes
+          .forEach(checkbox => {
+            if (checkbox.checked) {
+              checkbox.click();
+            }
+          });
+
+        elClick('.slshield-info__cta.slshield-info__cta-accept', () => clearInterval(kick));
+      }
+    }
   }, 100);
 
-  // perf pitfall - resign after 90 seconds if nothing managed or detected
-  setTimeout(function () {
+  const currentDomain = domains[location.hostname];
+  if (currentDomain) {
+    document.querySelector(currentDomain).remove();
     clearInterval(kick);
-  }, 90000);
+  }
+
+  // resign after 90 seconds if nothing managed or detected
+  setTimeout(() => clearInterval(kick), 90000);
 })();
 
