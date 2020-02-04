@@ -1,3 +1,10 @@
+# 1.4.1
+
+## Bug fixes
+
+  - Incomplete support of SirData fixed
+  - Incomplete support of platform behind SeLoger.com (theShield ?) fixed
+  
 # 1.4.0
 
 ## Features

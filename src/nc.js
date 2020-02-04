@@ -25,11 +25,15 @@ registerCookie('notice_preferences=0:');
 registerCookie('notice_gdpr_prefs=0:');
 
 function elClick(selector, callback) {
+  console.log('try', selector);
   if (document.querySelector(selector)) {
+    console.log('click', selector);
     document.querySelector(selector).click();
-  }
-  if (callback) {
-    callback();
+
+    if (callback) {
+      console.log('will callback');
+      callback();
+    }
   }
 }
 
@@ -83,10 +87,13 @@ const domains = {
 
     // sirdata
     if (!!window.Sddan && window.Sddan.cmpLoaded) {
-      elClick('.sd-cmp-1Q99t');
-      elClick('.sd-cmp-2DJbe');
-      elClick('.sd-cmp-2F7Cs');
-      clearInterval(kick);
+      elClick('.sd-cmp-1Q99t', () => {
+        elClick('.sd-cmp-2DJbe', () => {
+          elClick('.sd-cmp-2F7Cs', () => clearInterval(kick));
+        });
+      });
+
+
     }
 
     // platform behind seloger.com, french flat search engine, still don't know wich one it is
