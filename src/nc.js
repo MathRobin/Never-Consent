@@ -81,6 +81,14 @@ const domains = {
       clearInterval(kick);
     }
 
+    // sirdata
+    if (!!window.Sddan && window.Sddan.cmpLoaded) {
+      elClick('.sd-cmp-1Q99t');
+      elClick('.sd-cmp-2DJbe');
+      elClick('.sd-cmp-2F7Cs');
+      clearInterval(kick);
+    }
+
     // platform behind seloger.com, french flat search engine, still don't know wich one it is
     if (!!window.theShield) {
       fireEvent('#banner-cookie_customize', 'mousedown');

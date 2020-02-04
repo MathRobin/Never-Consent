@@ -10,6 +10,7 @@ Refuse consent to those platforms :
 - Osano cookieconsent (https://cookieconsent.osano.com/)
 - Cookie Law Info (https://www.cookielawinfo.com/)
 - Crownpeak (https://www.crownpeak.com/)
+- SirData (https://cmp.sirdata.com/)
 
 No more "do you accept ?" !
 

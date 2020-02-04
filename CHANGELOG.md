@@ -1,3 +1,9 @@
+# 1.4.0
+
+## Features
+
+  - Added support for SirData
+  
 # 1.3.0
 
 ## Features
