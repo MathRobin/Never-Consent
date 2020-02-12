@@ -1,3 +1,9 @@
+# 1.4.2
+
+## Bug fixes
+
+  - Extension logged some things in dev console
+
 # 1.4.1
 
 ## Bug fixes

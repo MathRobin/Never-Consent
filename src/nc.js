@@ -25,13 +25,10 @@ registerCookie('notice_preferences=0:');
 registerCookie('notice_gdpr_prefs=0:');
 
 function elClick(selector, callback) {
-  console.log('try', selector);
   if (document.querySelector(selector)) {
-    console.log('click', selector);
     document.querySelector(selector).click();
 
     if (callback) {
-      console.log('will callback');
       callback();
     }
   }
