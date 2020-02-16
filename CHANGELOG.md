@@ -1,4 +1,8 @@
-# 1.4.2
+# 1.5.0
+
+## Features
+
+  - Ported to run on Firefox too
 
 ## Bug fixes
 
