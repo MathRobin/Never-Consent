@@ -17,7 +17,7 @@ No more "do you accept ?" !
 ## Install it
 
 - For Chrome and chromium-based: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
-- For Firefox: soonly
+- For Firefox (desktop & mobile): https://addons.mozilla.org/fr/firefox/addon/never-consent/
 - For Edge: https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb
 - For Safari: not planned (help needed, don't have any apple device to test)
 
