@@ -1,53 +1,52 @@
-// quantcast
-function kickQuantcast(mutations) {
-  var qcReady = mutations.some(mutation => {
-    return mutation.target.firstChild &&
-      mutation.target.firstChild.classList &&
-      mutation.target.firstChild.classList.contains('qc-cmp-ui-container')
-  });
+(function () {
+  function kickQuantcast(mutations) {
+    var qcReady = mutations.some(mutation => {
+      return mutation.target.firstChild &&
+        mutation.target.firstChild.classList &&
+        mutation.target.firstChild.classList.contains('qc-cmp-ui-container')
+    });
 
-  if (qcReady) {
-    window.__cmpui('setAndSaveAllConsent', false);
-  }
-}
-
-const observer = new MutationObserver(kickQuantcast);
-observer.observe(document.body, {childList: true});
-
-function registerCookie(newCookie) {
-  if (!document.cookie.indexOf(newCookie)) {
-    document.cookie = newCookie;
-  }
-}
-
-registerCookie('cookieconsent_status=deny');
-registerCookie('notice_preferences=0:');
-registerCookie('notice_gdpr_prefs=0:');
-
-function elClick(selector, callback) {
-  if (document.querySelector(selector)) {
-    document.querySelector(selector).click();
-
-    if (callback) {
-      callback();
+    if (qcReady) {
+      window.__cmpui('setAndSaveAllConsent', false);
     }
   }
-}
 
-function fireEvent(selector, event) {
-  if (document.querySelector(selector)) {
-    const evObj = document.createEvent('Events');
-    evObj.initEvent(event, true, false);
-    document.querySelector(selector).dispatchEvent(evObj);
+  function registerCookie(newCookie) {
+    if (!document.cookie.indexOf(newCookie)) {
+      document.cookie = newCookie;
+    }
   }
-}
 
-const domains = {
-  'www.greenweez.com': '.cookies_banner',
-  'twitter.com': '#banners'
-};
+  function elClick(selector, callback) {
+    if (document.querySelector(selector)) {
+      document.querySelector(selector).click();
 
-(function () {
+      if (callback) {
+        callback();
+      }
+    }
+  }
+
+  function fireEvent(selector, event) {
+    if (document.querySelector(selector)) {
+      const evObj = document.createEvent('Events');
+      evObj.initEvent(event, true, false);
+      document.querySelector(selector).dispatchEvent(evObj);
+    }
+  }
+
+  registerCookie('cookieconsent_status=deny');
+  registerCookie('notice_preferences=0:');
+  registerCookie('notice_gdpr_prefs=0:');
+
+  // quantcast
+  (new MutationObserver(kickQuantcast)).observe(document.body, {childList: true});
+
+  const domains = {
+    'www.greenweez.com': '.cookies_banner',
+    'twitter.com': '#banners'
+  };
+
   let kickCmpmngr = 0;
 
   const kick = setInterval(function () {
@@ -89,7 +88,6 @@ const domains = {
           elClick('.sd-cmp-2F7Cs', () => clearInterval(kick));
         });
       });
-
 
     }
 

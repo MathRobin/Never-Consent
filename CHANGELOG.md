@@ -1,12 +1,14 @@
-# 1.5.0
+# 1.4.3
+
+## Bug fixes
+
+  - Not all the injected script was isolated from the current page
+
+# 1.4.2
 
 ## Features
 
   - Ported to run on Firefox too
-
-## Bug fixes
-
-  - Extension logged some things in dev console
 
 # 1.4.1
 
