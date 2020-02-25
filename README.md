@@ -11,6 +11,7 @@ Refuse consent to those platforms :
 - Cookie Law Info (https://www.cookielawinfo.com/)
 - Crownpeak (https://www.crownpeak.com/)
 - SirData (https://cmp.sirdata.com/)
+- TarteAuCitron (https://opt-out.ferank.eu/)
 
 No more "do you accept ?" !
 

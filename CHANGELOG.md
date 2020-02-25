@@ -1,3 +1,9 @@
+# 1.5.0
+
+## Features
+
+  - Added support for TarteAuCitron
+  
 # 1.4.3
 
 ## Bug fixes
@@ -16,7 +22,7 @@
 
   - Incomplete support of SirData fixed
   - Incomplete support of platform behind SeLoger.com (theShield ?) fixed
-  
+
 # 1.4.0
 
 ## Features

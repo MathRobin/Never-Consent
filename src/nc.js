@@ -73,6 +73,12 @@
       clearInterval(kick);
     }
 
+    // tarteaucitron
+    if (!!tarteaucitron) {
+      tarteaucitron.userInterface.respondAll(false);
+      clearInterval(kick);
+    }
+
     // crownpeak
     if (!!window.evidon) {
       elClick('.evidon-consent-button-text');
