@@ -50,69 +50,74 @@
   let kickCmpmngr = 0;
 
   const kick = setInterval(function () {
-    // Didomi
-    if (!!window.Didomi) {
-      window.Didomi.setUserDisagreeToAll();
-      clearInterval(kick);
-    }
-
-    // consentmanager
-    if (!!window.cmpmngr) {
-      kickCmpmngr += 1;
-      window.cmpmngr.setConsentViaBtn(0);
-
-      // Because they are like a man, they have to heard too much times "nope" to understand "nope"
-      if (5 === kickCmpmngr) {
+    try {
+      // Didomi
+      if (!!window.Didomi) {
+        window.Didomi.setUserDisagreeToAll();
         clearInterval(kick);
       }
-    }
 
-    // cookielawinfo
-    if (!!window.CLI && !!window.CLI.reject_close) {
-      CLI.reject_close();
-      clearInterval(kick);
-    }
+      // consentmanager
+      if (!!window.cmpmngr) {
+        kickCmpmngr += 1;
+        window.cmpmngr.setConsentViaBtn(0);
 
-    // tarteaucitron
-    if (!!tarteaucitron) {
-      tarteaucitron.userInterface.respondAll(false);
-      clearInterval(kick);
-    }
-
-    // crownpeak
-    if (!!window.evidon) {
-      elClick('.evidon-consent-button-text');
-      window.evidon.preferencesDialog.doWithdrawConsent();
-      document.querySelector('#_evh-button').remove();
-      clearInterval(kick);
-    }
-
-    // sirdata
-    if (!!window.Sddan && window.Sddan.cmpLoaded) {
-      elClick('.sd-cmp-1Q99t', () => {
-        elClick('.sd-cmp-2DJbe', () => {
-          elClick('.sd-cmp-2F7Cs', () => clearInterval(kick));
-        });
-      });
-
-    }
-
-    // platform behind seloger.com, french flat search engine, still don't know wich one it is
-    if (!!window.theShield) {
-      fireEvent('#banner-cookie_customize', 'mousedown');
-
-      const switchBoxes = document.querySelectorAll('.slshield-switch input');
-
-      if (switchBoxes.length) {
-        switchBoxes
-          .forEach(checkbox => {
-            if (checkbox.checked) {
-              checkbox.click();
-            }
-          });
-
-        elClick('.slshield-info__cta.slshield-info__cta-accept', () => clearInterval(kick));
+        // Because they are like a man, they have to heard too much times "nope" to understand "nope"
+        if (5 === kickCmpmngr) {
+          clearInterval(kick);
+        }
       }
+
+      // cookielawinfo
+      if (!!window.CLI && !!window.CLI.reject_close) {
+        CLI.reject_close();
+        clearInterval(kick);
+      }
+
+      // tarteaucitron
+      if (!!window.tarteaucitron) {
+        tarteaucitron.userInterface.respondAll(false);
+        clearInterval(kick);
+      }
+
+      // crownpeak
+      if (!!window.evidon) {
+        elClick('.evidon-consent-button-text');
+        window.evidon.preferencesDialog.doWithdrawConsent();
+        document.querySelector('#_evh-button').remove();
+        clearInterval(kick);
+      }
+
+      // sirdata
+      if (!!window.Sddan && window.Sddan.cmpLoaded) {
+        elClick('.sd-cmp-1Q99t', () => {
+          elClick('.sd-cmp-2DJbe', () => {
+            elClick('.sd-cmp-2F7Cs', () => clearInterval(kick));
+          });
+        });
+
+      }
+
+      // platform behind seloger.com, french flat search engine, still don't know wich one it is
+      if (!!window.theShield) {
+        fireEvent('#banner-cookie_customize', 'mousedown');
+
+        const switchBoxes = document.querySelectorAll('.slshield-switch input');
+
+        if (switchBoxes.length) {
+          switchBoxes
+            .forEach(checkbox => {
+              if (checkbox.checked) {
+                checkbox.click();
+              }
+            });
+
+          elClick('.slshield-info__cta.slshield-info__cta-accept', () => clearInterval(kick));
+        }
+      }
+    } catch (except) {
+      console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');
+      console.error('[extension:Never-Consent]', except);
     }
   }, 100);
 

@@ -1,3 +1,9 @@
+# 1.5.1
+
+## Bug fixes
+
+  - TarteAuCitron broke Google Docs (issue #25)
+
 # 1.5.0
 
 ## Features
