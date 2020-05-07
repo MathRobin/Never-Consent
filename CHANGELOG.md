@@ -1,3 +1,9 @@
+# 1.5.2
+
+## Bug fixes
+
+  - SirData new version supported (issue #27)
+
 # 1.5.1
 
 ## Bug fixes

@@ -90,12 +90,11 @@
 
       // sirdata
       if (!!window.Sddan && window.Sddan.cmpLoaded) {
-        elClick('.sd-cmp-1Q99t', () => {
-          elClick('.sd-cmp-2DJbe', () => {
-            elClick('.sd-cmp-2F7Cs', () => clearInterval(kick));
+        elClick('.sd-cmp-scPzo', () => {
+          elClick('.sd-cmp-25WIV', () => {
+            elClick('.sd-cmp-2HNNR', () => clearInterval(kick));
           });
         });
-
       }
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
