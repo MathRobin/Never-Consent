@@ -3,6 +3,7 @@
 ## Features
 
   - Support added for OneTrust (issue #5)
+  - Added build script to generate archive
   
 # 1.6.0
 
