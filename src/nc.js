@@ -105,8 +105,15 @@
         });
       }
 
+      // appconsent
       if (!!window.appConsent && window.appConsent.denyAll) {
-        appConsent.denyAll()
+        appConsent.denyAll();
+      }
+
+      // onetrust
+      if (!!window.OneTrust && window.OneTrust.RejectAll) {
+        window.OneTrust.RejectAll();
+        clearInterval(kick);
       }
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is

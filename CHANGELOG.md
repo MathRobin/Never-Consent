@@ -1,3 +1,9 @@
+# 1.7.0
+
+## Features
+
+  - Support added for OneTrust (issue #5)
+  
 # 1.6.0
 
 ## Features

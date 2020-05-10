@@ -13,6 +13,7 @@ Refuse consent to those platforms :
 - SirData (https://cmp.sirdata.com/)
 - TarteAuCitron (https://opt-out.ferank.eu/)
 - AppConsent (https://www.appconsent.io)
+- OneTrust (https://www.onetrust.com/)
 
 No more "do you accept ?" !
 
