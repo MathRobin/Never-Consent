@@ -12,6 +12,7 @@ Refuse consent to those platforms :
 - Crownpeak (https://www.crownpeak.com/)
 - SirData (https://cmp.sirdata.com/)
 - TarteAuCitron (https://opt-out.ferank.eu/)
+- AppConsent (https://www.appconsent.io)
 
 No more "do you accept ?" !
 

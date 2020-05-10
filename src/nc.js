@@ -35,6 +35,11 @@
     }
   }
 
+  function didMoronUnderstood () {
+    kickMoron += 1;
+    return 30 <= kickMoron;
+  }
+
   registerCookie('cookieconsent_status=deny');
   registerCookie('notice_preferences=0:');
   registerCookie('notice_gdpr_prefs=0:');
@@ -47,23 +52,26 @@
     'twitter.com': '#banners'
   };
 
-  let kickCmpmngr = 0;
+  let kickMoron = 0;
 
   const kick = setInterval(function () {
     try {
       // Didomi
-      if (!!window.Didomi) {
+      if (!!window.Didomi && !!window.Didomi.setUserDisagreeToAll) {
         window.Didomi.setUserDisagreeToAll();
-        clearInterval(kick);
+
+        // Because they are like a man, they have to heard too much times "nope" to understand "nope"
+        if (didMoronUnderstood()) {
+          clearInterval(kick);
+        }
       }
 
       // consentmanager
       if (!!window.cmpmngr) {
-        kickCmpmngr += 1;
         window.cmpmngr.setConsentViaBtn(0);
 
         // Because they are like a man, they have to heard too much times "nope" to understand "nope"
-        if (5 === kickCmpmngr) {
+        if (didMoronUnderstood()) {
           clearInterval(kick);
         }
       }
@@ -95,6 +103,10 @@
             elClick('.sd-cmp-2HNNR', () => clearInterval(kick));
           });
         });
+      }
+
+      if (!!window.appConsent && window.appConsent.denyAll) {
+        appConsent.denyAll()
       }
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
@@ -129,4 +141,3 @@
   // resign after 90 seconds if nothing managed or detected
   setTimeout(() => clearInterval(kick), 90000);
 })();
-

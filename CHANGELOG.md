@@ -1,3 +1,13 @@
+# 1.6.0
+
+## Features
+
+  - Support added for AppConsent (issue #28)
+  
+## Bug fixes
+
+  - Fixed Didomi, needed to repeat that we don't want them (issue #26)
+  
 # 1.5.2
 
 ## Bug fixes
