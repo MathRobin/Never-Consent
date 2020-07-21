@@ -89,7 +89,7 @@
       }
 
       // crownpeak
-      if (!!window.evidon) {
+      if (!!window.evidon && !!window.evidon.preferencesDialog) {
         elClick('.evidon-consent-button-text');
         window.evidon.preferencesDialog.doWithdrawConsent();
         document.querySelector('#_evh-button').remove();
