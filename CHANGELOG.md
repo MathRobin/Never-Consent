@@ -1,3 +1,9 @@
+# 1.9.0
+
+## Features
+
+  - Support added for Klaro and Orejime
+
 # 1.8.1
 
  

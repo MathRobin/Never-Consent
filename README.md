@@ -15,6 +15,8 @@ Refuse consent to those platforms :
 - AppConsent (https://www.appconsent.io)
 - OneTrust (https://www.onetrust.com/)
 - CreateIt (https://www.createit.com/)
+- Kiprotect Klaro (https://klaro.kiprotect.com/)
+- Orejime (https://github.com/empreinte-digitale/orejime)
 
 No more "do you accept ?" !
 

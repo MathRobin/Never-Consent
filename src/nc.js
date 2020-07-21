@@ -17,14 +17,27 @@
     }
   }
 
+  function waitForElement(selector, callback) {
+    if (!eleWaiter) {
+      eleWaiter = window.setInterval(() => {
+        if (document.querySelector(selector)) {
+          window.clearInterval(eleWaiter);
+          eleWaiter = false;
+
+          callback();
+        }
+      }, 10);
+    }
+  }
+
   function elClick(selector, callback) {
-    if (document.querySelector(selector)) {
+    waitForElement(selector, () => {
       document.querySelector(selector).click();
 
       if (callback) {
         callback();
       }
-    }
+    });
   }
 
   function fireEvent(selector, event) {
@@ -53,6 +66,7 @@
   };
 
   let kickMoron = 0;
+  let eleWaiter = false;
 
   const kick = setInterval(function () {
     try {
@@ -137,6 +151,19 @@
         }
       }
 
+      // Klaro
+      if (!!window.klaro) {
+        if (document.querySelector('.cn-decline')) {
+          elClick('.cn-decline');
+        } else {
+          elClick('.cm-learn-more', () => {
+            elClick('[for="app-item-disableAll"] .switch .slider', () => {
+              elClick('.cn-decline');
+            });
+          });
+        }
+      }
+
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
       if (!!window.theShield) {
         fireEvent('#banner-cookie_customize', 'mousedown');
@@ -166,6 +193,9 @@
     clearInterval(kick);
   }
 
-  // resign after 90 seconds if nothing managed or detected
-  setTimeout(() => clearInterval(kick), 90000);
+  // resign after 20 seconds if nothing managed or detected
+  setTimeout(() => {
+    clearInterval(kick);
+    clearInterval(eleWaiter);
+  }, 20000);
 })();
