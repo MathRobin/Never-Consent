@@ -1,3 +1,13 @@
+# 1.8.0
+
+## Features
+
+  - Support added for CreateIt (issue #29)
+  
+## Bug fixes
+
+  - Fixed crownpeak, infinite error loop in console when using banner instead of popup (issues #30 and #32)
+  
 # 1.7.0
 
 ## Features

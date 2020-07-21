@@ -14,6 +14,7 @@ Refuse consent to those platforms :
 - TarteAuCitron (https://opt-out.ferank.eu/)
 - AppConsent (https://www.appconsent.io)
 - OneTrust (https://www.onetrust.com/)
+- CreateIt (https://www.createit.com/)
 
 No more "do you accept ?" !
 

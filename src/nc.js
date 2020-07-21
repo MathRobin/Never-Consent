@@ -88,12 +88,32 @@
         clearInterval(kick);
       }
 
+      // createit
+      console.log(window.ct_ultimate_gdpr_cookie);
+      if (!!window.ct_ultimate_gdpr_cookie) {
+        elClick('#ct-ultimate-gdpr-cookie-change-settings', () => {
+          elClick('.ct-ultimate-gdpr-cookie-modal-slider [for="cookie0"]', () => {
+            elClick('.ct-ultimate-gdpr-cookie-modal-btn.save a');
+          });
+        })
+        clearInterval(kick);
+      }
+
       // crownpeak
       if (!!window.evidon && !!window.evidon.preferencesDialog) {
         elClick('.evidon-consent-button-text');
         window.evidon.preferencesDialog.doWithdrawConsent();
         document.querySelector('#_evh-button').remove();
         clearInterval(kick);
+      }
+      if (!!window.evidon && !!window.evidon.banner) {
+        // elClick('.evidon-banner-optionbutton', () => {
+          // setTimeout(() => {
+          //   elClick('.opt-out-all-button', () => {
+          //     clearInterval(kick);
+          //   });
+          // }, 2000);
+        // });
       }
 
       // sirdata
