@@ -1,3 +1,10 @@
+# 1.8.1
+
+ 
+## Bug fixes
+
+  - Fixed onetrust, which needed to repeat that we don't want them (issues #31)
+  
 # 1.8.0
 
 ## Features
