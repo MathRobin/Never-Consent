@@ -89,7 +89,6 @@
       }
 
       // createit
-      console.log(window.ct_ultimate_gdpr_cookie);
       if (!!window.ct_ultimate_gdpr_cookie) {
         elClick('#ct-ultimate-gdpr-cookie-change-settings', () => {
           elClick('.ct-ultimate-gdpr-cookie-modal-slider [for="cookie0"]', () => {
@@ -133,7 +132,9 @@
       // onetrust
       if (!!window.OneTrust && window.OneTrust.RejectAll) {
         window.OneTrust.RejectAll();
-        clearInterval(kick);
+        if (didMoronUnderstood()) {
+          clearInterval(kick);
+        }
       }
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
