@@ -2,7 +2,7 @@
 
 ## Features
 
-  - Support added for Klaro and Orejime
+  - Support added for Axel SPring OIL, Klaro and Orejime
 
 # 1.8.1
 

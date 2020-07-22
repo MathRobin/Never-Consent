@@ -151,18 +151,39 @@
         }
       }
 
-      // Klaro
+      // klaro
       if (!!window.klaro) {
         if (document.querySelector('.cn-decline')) {
           elClick('.cn-decline');
+          clearInterval(kick);
         } else {
           elClick('.cm-learn-more', () => {
             elClick('[for="app-item-disableAll"] .switch .slider', () => {
               elClick('.cn-decline');
+              clearInterval(kick);
             });
           });
         }
       }
+
+      // orejime
+      if (!!window.orejime) {
+        elClick('.orejime-Button--info', () => {
+          Object.keys(orejime.internals.manager.consents).forEach(ele => orejime.internals.manager.consents[ele] = false);
+          elClick('.orejime-Modal-saveButton', () => {
+            clearInterval(kick);
+          })
+        });
+      }
+
+      // axel springer oil
+      if (!!window.AS_OIL) {
+        AS_OIL.triggerOptOut();
+        AS_OIL.showPreferenceCenter();
+        elClick('.as-oil__btn-optin.as-js-optin[data-context="YES"]');
+        clearInterval(kick);
+      }
+
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
       if (!!window.theShield) {

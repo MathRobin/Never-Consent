@@ -17,6 +17,7 @@ Refuse consent to those platforms :
 - CreateIt (https://www.createit.com/)
 - Kiprotect Klaro (https://klaro.kiprotect.com/)
 - Orejime (https://github.com/empreinte-digitale/orejime)
+- Axel Springer OIL Hub (http://oil.axelspringer.com/)
 
 No more "do you accept ?" !
 
