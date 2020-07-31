@@ -74,7 +74,7 @@
       if (!!window.Didomi && !!window.Didomi.setUserDisagreeToAll) {
         window.Didomi.setUserDisagreeToAll();
 
-        // Because they are like a man, they have to heard too much times "nope" to understand "nope"
+        // It has to be told multiple times "no" to understand "no"
         if (didMoronUnderstood()) {
           clearInterval(kick);
         }
@@ -84,7 +84,7 @@
       if (!!window.cmpmngr) {
         window.cmpmngr.setConsentViaBtn(0);
 
-        // Because they are like a man, they have to heard too much times "nope" to understand "nope"
+        // It has to be told multiple times "no" to understand "no"
         if (didMoronUnderstood()) {
           clearInterval(kick);
         }
