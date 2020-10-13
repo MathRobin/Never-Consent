@@ -31,6 +31,7 @@
   }
 
   function elClick(selector, callback, targetParent = false) {
+    console.log(`try selector ${selector}`)
     waitForElement(selector, () => {
       // target parent element
       if (targetParent) {
@@ -135,13 +136,10 @@
       }
 
       // sirdata
-	  // 20201001 - Updated to target parents button (given class are those of span childs)
       if (!!window.Sddan && window.Sddan.cmpLoaded) {
-        elClick('.sd-cmp-2Pci8.sd-cmp-1BHAu.sd-cmp-1jg0y', () => {
-          elClick('.sd-cmp-2Pci8.sd-cmp-1xpje.sd-cmp-1jg0y', () => {
-            elClick('.sd-cmp-2Pci8.sd-cmp-1BHAu.sd-cmp-1U8T_', () => clearInterval(kick), true);
-          }, true);
-        }, true);
+        elClick('#sd-cmp #main_body button:nth-child(2)', () => {
+          elClick('#sd-cmp #details_body + div button', () => clearInterval(kick));
+        });
       }
 
       // appconsent
