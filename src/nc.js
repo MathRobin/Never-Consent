@@ -31,7 +31,6 @@
   }
 
   function elClick(selector, callback, targetParent = false) {
-    console.log(`try selector ${selector}`)
     waitForElement(selector, () => {
       // target parent element
       if (targetParent) {
