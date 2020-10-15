@@ -142,8 +142,8 @@
       }
 
       // appconsent
-      if (!!window.appConsent && window.appConsent.denyAll) {
-        appConsent.denyAll();
+      if (!!window.__tcfapi) {
+        __tcfapi('deny', 2, () => {});
       }
 
       // onetrust

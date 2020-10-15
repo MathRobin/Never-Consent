@@ -54,6 +54,8 @@ Here are a list of sites for each platform where you can try your PRs if you wan
   - https://opt-out.ferank.eu/
 - AppConsent
   - https://www.appconsent.io
+  - https://www.lyonmag.com/
+  - https://www.lefigaro.fr/
 - OneTrust
   - https://www.onetrust.com/
   - https://www.lepoint.fr/

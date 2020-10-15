@@ -1,3 +1,15 @@
+# 1.9.2
+
+## Bug fixes
+
+  - Fixed AppConsent, SFBX have changed their APIs
+
+# 1.9.1
+
+## Bug fixes
+
+  - Fixed SirData, which have updated their buttons css classnames
+
 # 1.9.0
 
 ## Features
