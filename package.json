@@ -1,0 +1,26 @@
+{
+  "name": "never-consent",
+  "version": "1.9.2",
+  "description": "Never consent to any GDPR consent management platform",
+  "main": "manifest.json",
+  "scripts": {
+    "build": "sh build.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathRobin/Never-Consent.git"
+  },
+  "keywords": [
+    "gdpr",
+    "rgpd",
+    "browser",
+    "extension"
+  ],
+  "author": "Mathieu Kim Robin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MathRobin/Never-Consent/issues"
+  },
+  "homepage": "https://github.com/MathRobin/Never-Consent#readme"
+}
