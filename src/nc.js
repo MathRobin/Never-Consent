@@ -17,22 +17,30 @@
     }
   }
 
-  function waitForElement(selector, callback) {
+  function waitForElement(selector, callback, maybeTimer = false) {
     if (!eleWaiter) {
       eleWaiter = window.setInterval(() => {
-        if (document.querySelector(selector)) {
+        const eleSelected = document.querySelector(selector);
+        if (eleSelected) {
           window.clearInterval(eleWaiter);
+          window.clearTimeout(eleMaybeWaiter);
           eleWaiter = false;
 
-          callback();
+          callback(eleSelected);
         }
       }, 10);
+      if (maybeTimer) {
+        eleMaybeWaiter = window.setTimeout(() => {
+          window.clearInterval(eleWaiter);
+
+          callback(null);
+        }, maybeTimer);
+      }
     }
   }
 
-  function elClick(selector, callback, targetParent = false) {
+  function elClick(selector, callback, {targetParent = false, maybeTimer = false} = {}) {
     waitForElement(selector, () => {
-      // target parent element
       if (targetParent) {
         document.querySelector(selector).parentNode.click();
       } else {
@@ -42,7 +50,7 @@
       if (callback) {
         callback();
       }
-    });
+    }, maybeTimer);
   }
 
   function fireEvent(selector, event) {
@@ -72,6 +80,7 @@
 
   let kickMoron = 0;
   let eleWaiter = false;
+  let eleMaybeWaiter = false;
 
   const kick = setInterval(function () {
     try {
@@ -111,27 +120,36 @@
       if (!!window.ct_ultimate_gdpr_cookie) {
         elClick('#ct-ultimate-gdpr-cookie-change-settings', () => {
           elClick('.ct-ultimate-gdpr-cookie-modal-slider [for="cookie0"]', () => {
-            elClick('.ct-ultimate-gdpr-cookie-modal-btn.save a');
+            elClick('.ct-ultimate-gdpr-cookie-modal-btn.save a', () => {
+              clearInterval(kick);
+            });
           });
         })
-        clearInterval(kick);
+      }
+
+      // cookiebot
+      if (!!window.Cookiebot) {
+        elClick('#CybotCookiebotDialogBodyButtonDecline', () => {
+          clearInterval(kick);
+        });
       }
 
       // crownpeak
       if (!!window.evidon && !!window.evidon.preferencesDialog) {
-        elClick('.evidon-consent-button-text');
-        window.evidon.preferencesDialog.doWithdrawConsent();
-        document.querySelector('#_evh-button').remove();
-        clearInterval(kick);
+        elClick('.evidon-consent-button-text', () => {
+          window.evidon.preferencesDialog.doWithdrawConsent();
+          document.querySelector('#_evh-button').remove();
+          clearInterval(kick);
+        });
+      }
+      if (!!window.evidon && !!window.evidon.barrier) {
+        elClick('.evidon-barrier-cookiebutton', () => {
+          console.error('[extension:Never-Consent] Sadly I can\'t do more for you, I just can display to you the right modal.');
+          clearInterval(kick);
+        }, {maybeTimer: 2000});
       }
       if (!!window.evidon && !!window.evidon.banner) {
-        // elClick('.evidon-banner-optionbutton', () => {
-          // setTimeout(() => {
-          //   elClick('.opt-out-all-button', () => {
-          //     clearInterval(kick);
-          //   });
-          // }, 2000);
-        // });
+        console.error('[extension:Never-Consent] Evidon banner still not managed');
       }
 
       // sirdata

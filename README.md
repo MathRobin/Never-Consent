@@ -18,6 +18,7 @@ Automatically refuse consent to sites which uses those platforms :
 - [Kiprotect Klaro](https://klaro.kiprotect.com/)
 - [Orejime](https://github.com/empreinte-digitale/orejime)
 - [Axel Springer OIL Hub](http://oil.axelspringer.com/)
+- [Cybot CookieBot](https://www.cookiebot.com/)
 
 No more "do you accept ?" !
 
@@ -46,7 +47,8 @@ Here are a list of sites for each platform where you can try your PRs if you wan
 - Cookie Law Info
   - https://www.cookielawinfo.com/
 - Crownpeak
-  - https://www.crownpeak.com/
+  - https://www.crownpeak.com/ (banner mode)
+  - https://downdetector.fr/ (barrier mode)
 - SirData
   - https://cmp.sirdata.com/
   - https://www.futura-sciences.com/
@@ -68,6 +70,9 @@ Here are a list of sites for each platform where you can try your PRs if you wan
   - https://github.com/empreinte-digitale/orejime
 - Axel Springer OIL Hub
   - http://oil.axelspringer.com/
+- CookieBot
+  - https://www.cookiebot.com/
+  - https://training.zenika.com/
 
 ## Thanks to
 

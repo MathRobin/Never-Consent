@@ -1,3 +1,10 @@
+# 1.10.0
+
+## Features
+
+  - Support added for Cybot CookieBot
+  - Partial support added for Evidon (barrier mode, only open the good modal to show "reject all" button)
+
 # 1.9.2
 
 ## Bug fixes
@@ -14,7 +21,7 @@
 
 ## Features
 
-  - Support added for Axel SPring OIL, Klaro and Orejime
+  - Support added for Axel Spring OIL, Klaro and Orejime
 
 # 1.8.1
 
@@ -61,6 +68,7 @@
 ## Bug fixes
 
   - TarteAuCitron broke Google Docs (issue #25)
+  - Fixed Evidon (dialog mode)
 
 # 1.5.0
 

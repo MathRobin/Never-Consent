@@ -1,11 +1,10 @@
 {
   "name": "never-consent",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "description": "Never consent to any GDPR consent management platform",
   "main": "manifest.json",
   "scripts": {
-    "build": "sh build.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sh build.sh"
   },
   "repository": {
     "type": "git",
