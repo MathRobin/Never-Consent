@@ -1,9 +1,6 @@
 #!/bin/bash
 
-#rm never-consent.zip
-#zip -r never-consent.zip assets src CHANGELOG.md LICENSE manifest.json README.md
-
-type=$1
+TYPE=$1
 VERSION=$2
 
 cp package.json package.old.json
@@ -15,7 +12,11 @@ cat manifest.old.json  | jq '.version |= "'$VERSION'"' > manifest.json
 rm manifest.old.json
 
 git add package.json manifest.json
-git commit -m ""
+git commit -m "$TYPE(version): bump to $VERSION"
+git push origin master
 
-#git tag -a $VERSION $COMMIT  -m $VERSION
-#git push origin $VERSION
+git tag -a $VERSION $COMMIT  -m $VERSION
+git push origin $VERSION
+
+rm never-consent.zip
+zip -r never-consent.zip assets src CHANGELOG.md LICENSE manifest.json README.md
