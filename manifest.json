@@ -3,7 +3,7 @@
   "author": "Mathieu Kim Robin",
   "name": "Never-Consent",
   "description": "Never consent to any GDPR consent management platform",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "icons": {
     "16": "assets/16.ico",
     "48": "assets/48.ico",
@@ -12,8 +12,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["src/content.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content.js"
+      ],
       "run_at": "document_end"
     }
   ],

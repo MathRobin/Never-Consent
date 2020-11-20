@@ -1,7 +1,7 @@
 # Never-Consent
 Never consent to any GDPR consent management platform. All permissions are immediatly refused.
 
-This extension completes uBlock, AdBlock & co, they don't serve the same objectives. We promote usage of adblockers in completion.
+**/!\ IMPORTANT:** This extension completes uBlock, AdBlock & co, they don't serve the same objectives. We promote usage of adblockers in completion. Never-Consent will (try to) reject consent as possible, it will not block ads, it will not be able block all cookies if sites doesn't care whether you / never-consent said nope.
 
 Automatically refuse consent to sites which uses those platforms :
 - [Quantcast](https://www.quantcast.com/)
@@ -20,7 +20,7 @@ Automatically refuse consent to sites which uses those platforms :
 - [Axel Springer OIL Hub](http://oil.axelspringer.com/)
 - [Cybot CookieBot](https://www.cookiebot.com/)
 
-No more "do you accept ?" !
+No more "Do you accept ?" !
 
 ## Install it
 
@@ -35,6 +35,9 @@ Not available
 ## Contribute
 
 Don't hesitate to clone and PR this repo, or to open an issue with some details on which platform is not supported.
+
+### Dependencies
+To push a new release, script use [jq](https://stedolan.github.io/jq/download/) a lightweight and flexible command-line JSON processor.
 
 ## Test
 Here are a list of sites for each platform where you can try your PRs if you want. Don't hesitate to enrich this section:
