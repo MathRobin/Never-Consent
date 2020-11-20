@@ -1,3 +1,9 @@
+# 1.11.0
+
+## Features
+
+  - Better build tool, automatically generates zip, updates manifest.json and package.json and publish tag
+
 # 1.10.0
 
 ## Features
