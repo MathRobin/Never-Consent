@@ -1,3 +1,9 @@
+# 1.12.0
+
+## Features
+
+  - Quick win, kill banner from cabinet-bedin website
+
 # 1.11.0
 
 ## Features

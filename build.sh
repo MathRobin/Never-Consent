@@ -15,7 +15,7 @@ git add package.json manifest.json
 git commit -m "$TYPE(version): bump to $VERSION"
 git push origin master
 
-git tag -a $VERSION $COMMIT  -m $VERSION
+git tag -a $VERSION $COMMIT -m $VERSION
 git push origin $VERSION
 
 rm never-consent.zip

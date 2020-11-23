@@ -68,6 +68,7 @@
 
   registerCookie('cookieconsent_status=deny');
   registerCookie('notice_preferences=0:');
+  registerCookie('cabinet_bedin_cookies=eyJ3ZWJzaXRlIjpmYWxzZSwiZ29vZ2xlIjpmYWxzZSwieW91dHViZSI6ZmFsc2UsInZpbWVvIjpmYWxzZSwiZmJfcGl4ZWwiOmZhbHNlLCJzb2NpYWxzIjpmYWxzZX0=:');
   registerCookie('notice_gdpr_prefs=0:');
 
   // quantcast
@@ -75,7 +76,8 @@
 
   const domains = {
     'www.greenweez.com': '.cookies_banner',
-    'twitter.com': '#banners'
+    'twitter.com': '#banners',
+    'www.cabinet-bedin.com':'#cookie_headband'
   };
 
   let kickMoron = 0;
