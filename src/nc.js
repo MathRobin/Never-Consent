@@ -87,13 +87,17 @@
   const kick = setInterval(function () {
     try {
       // Didomi
-      if (!!window.Didomi && !!window.Didomi.setUserDisagreeToAll) {
-        window.Didomi.setUserDisagreeToAll();
-
-        // It has to be told multiple times "no" to understand "no"
-        if (didMoronUnderstood()) {
-          clearInterval(kick);
-        }
+      if (!!window.Didomi && !! window.didomiOnReady) {
+        window.didomiOnReady.push(function (Didomi) { 
+          if (Didomi.notice.isVisible() && !!Didomi.setUserDisagreeToAll) {
+            Didomi.setUserDisagreeToAll();
+            document.querySelectorAll('#didomi-host')
+              .forEach( function(d) {
+                d.setAttribute('aria-hidden', 'true');
+                d.style.display = 'none';
+              });
+          }
+        });
       }
 
       // consentmanager
