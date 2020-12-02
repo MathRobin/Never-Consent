@@ -46,6 +46,7 @@ Here are a list of sites for each platform where you can try your PRs if you wan
   - https://www.quantcast.com/
 - Didomi
   - https://www.didomi.io
+  - https://www.fip.fr
 - ConsentManager
   - https://www.consentmanager.net/
 - Osano cookieconsent
@@ -92,9 +93,10 @@ Many thanks to:
 - SVG Silh which provides the great [logo](https://svgsilh.com/image/1299163.html) of this extension (CC0)
 - [Aurélien Hervé](https://aurelien-herve.com/) who inspired me this extension with his extension [GDPNope](https://chrome.google.com/webstore/detail/gdpnope/kaobbaeanleebomkmkleekoeefldjcpi?hl=es)
 
-Many thanks too to these great humans for their PRs and bug reports. This extension couldn't be this useful without them.
-- [Shadok](https://github.com/Shadok)
-- [jonathan-rosa](https://github.com/jonathan-rosa)
-- [TontonSancho](https://github.com/TontonSancho)
+Many thanks too to these great humans for their PRs and bug reports in alphabetical order. This extension couldn't be this useful without them.
 - [brian6932](https://github.com/brian6932)
+- [jduval87](https://github.com/jduval87)
+- [jonathan-rosa](https://github.com/jonathan-rosa)
+- [Shadok](https://github.com/Shadok)
 - [tartpvule](https://github.com/tartpvule)
+- [TontonSancho](https://github.com/TontonSancho)
