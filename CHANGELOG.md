@@ -1,3 +1,9 @@
+# 1.13.0
+
+## Features
+
+  - Fix redirect loop on fip.fr due to Didomi behaviour. Many thanks to jduval87 for this great contribution !
+
 # 1.12.0
 
 ## Features
