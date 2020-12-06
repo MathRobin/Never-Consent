@@ -253,6 +253,26 @@
         appconsent.default.deny();
         clearInterval(kick);
       }
+      
+      // cookieconsent(.fallback) / epaas (ex-BMW)
+      if (((!!window.consentcontroller && !!consentcontroller.api) ||
+           (!!window.cookiecontroller && !!cookiecontroller.api) ||
+           (!!window.epaas && !!epaas.api))) {
+              
+          if (!!window.consentcontroller && !!consentcontroller.api) {
+              var api = consentcontroller.api;
+          }
+          else if (!!window.cookiecontroller && !!cookiecontroller.api) {
+              var api = cookiecontroller.api;
+          }
+          else {
+              var api = epaas.api;
+          }
+          if (!!api.registerOnInitialized) {
+            api.registerOnInitialized(() => {api.setRegulationRejected()});
+            clearInterval(kick);
+          }
+      }
     } catch (except) {
       console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');
       console.error('[extension:Never-Consent]', except);
