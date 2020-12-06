@@ -229,6 +229,20 @@
           elClick('.slshield-info__cta.slshield-info__cta-accept', () => clearInterval(kick));
         }
       }
+      
+      // Sibbo
+      if (!!window.SibboCMP && !!SibboCMP.isOpen()) {
+        elClick('sibbo-cmp-layout .sibbo-panel__aside a.sibbo-cmp-button[data-nav="purposes"]', () => {
+          elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="next"]', () => {
+            elClick('sibbo-cmp-layout a#purposesNavLegInt', () => {
+              elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="save-and-exit"]', () => {
+                 elClick('sibbo-cmp-layout a#purposesLegIntSaveAndExit', () => clearInterval(kick)
+                );
+              });
+            });
+          });
+        });
+      }
     } catch (except) {
       console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');
       console.error('[extension:Never-Consent]', except);
