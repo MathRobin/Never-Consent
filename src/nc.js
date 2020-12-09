@@ -98,6 +98,7 @@
               });
           }
         });
+        clearInterval(kick);
       }
 
       // consentmanager
