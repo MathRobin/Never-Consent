@@ -98,6 +98,7 @@
               });
           }
         });
+        clearInterval(kick);
       }
 
       // consentmanager
@@ -242,6 +243,12 @@
             });
           });
         });
+      }
+
+      //chandago / sfbx / appconsent
+      if (!!window.appconsent && document.getElementById('appconsent') != null && !!appconsent.default && !!appconsent.default.isInitialised) {
+          appconsent.default.deny();
+          clearInterval(kick);
       }
     } catch (except) {
       console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');
