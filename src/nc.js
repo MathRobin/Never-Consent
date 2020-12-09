@@ -231,6 +231,20 @@
         }
       }
       
+      // Sibbo
+      if (!!window.SibboCMP && !!SibboCMP.isOpen()) {
+        elClick('sibbo-cmp-layout .sibbo-panel__aside a.sibbo-cmp-button[data-nav="purposes"]', () => {
+          elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="next"]', () => {
+            elClick('sibbo-cmp-layout a#purposesNavLegInt', () => {
+              elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="save-and-exit"]', () => {
+                 elClick('sibbo-cmp-layout a#purposesLegIntSaveAndExit', () => clearInterval(kick)
+                );
+              });
+            });
+          });
+        });
+      }
+
       //chandago / sfbx / appconsent
       if (!!window.appconsent && document.getElementById('appconsent') != null && !!appconsent.default && !!appconsent.default.isInitialised) {
           appconsent.default.deny();
