@@ -4,6 +4,8 @@
 
   - Support added for Chandago, SibboCMP
 
+# 1.13.0
+
 ## Features
 
   - Fix redirect loop on fip.fr due to Didomi behaviour. Many thanks to jduval87 for this great contribution !
