@@ -1,4 +1,8 @@
-# 1.13.0
+# 1.14.0
+
+## Features
+
+  - Support added for Chandago, SibboCMP
 
 ## Features
 

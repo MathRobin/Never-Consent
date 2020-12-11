@@ -61,6 +61,9 @@ Here are a list of sites for each platform where you can try your PRs if you wan
   - https://www.futura-sciences.com/
 - TarteAuCitron
   - https://opt-out.ferank.eu/
+- Chandago
+  - https://www.chandago.com/
+  - https://www.commentcamarche.net/
 - AppConsent
   - https://www.appconsent.io
   - https://www.lyonmag.com/

@@ -1,5 +1,5 @@
 (function () {
-  function kickQuantcast(mutations) {
+  function kickQuantcast (mutations) {
     var qcReady = mutations.some(mutation => {
       return mutation.target.firstChild &&
         mutation.target.firstChild.classList &&
@@ -11,13 +11,13 @@
     }
   }
 
-  function registerCookie(newCookie) {
+  function registerCookie (newCookie) {
     if (!document.cookie.indexOf(newCookie)) {
       document.cookie = newCookie;
     }
   }
 
-  function waitForElement(selector, callback, maybeTimer = false) {
+  function waitForElement (selector, callback, maybeTimer = false) {
     if (!eleWaiter) {
       eleWaiter = window.setInterval(() => {
         const eleSelected = document.querySelector(selector);
@@ -39,7 +39,10 @@
     }
   }
 
-  function elClick(selector, callback, {targetParent = false, maybeTimer = false} = {}) {
+  function elClick (selector, callback, {
+    targetParent = false,
+    maybeTimer = false
+  } = {}) {
     waitForElement(selector, () => {
       if (targetParent) {
         document.querySelector(selector).parentNode.click();
@@ -53,7 +56,7 @@
     }, maybeTimer);
   }
 
-  function fireEvent(selector, event) {
+  function fireEvent (selector, event) {
     if (document.querySelector(selector)) {
       const evObj = document.createEvent('Events');
       evObj.initEvent(event, true, false);
@@ -77,7 +80,7 @@
   const domains = {
     'www.greenweez.com': '.cookies_banner',
     'twitter.com': '#banners',
-    'www.cabinet-bedin.com':'#cookie_headband'
+    'www.cabinet-bedin.com': '#cookie_headband'
   };
 
   let kickMoron = 0;
@@ -87,12 +90,12 @@
   const kick = setInterval(function () {
     try {
       // Didomi
-      if (!!window.Didomi && !! window.didomiOnReady) {
-        window.didomiOnReady.push(function (Didomi) { 
+      if (!!window.Didomi && !!window.didomiOnReady) {
+        window.didomiOnReady.push(function (Didomi) {
           if (Didomi.notice.isVisible() && !!Didomi.setUserDisagreeToAll) {
             Didomi.setUserDisagreeToAll();
             document.querySelectorAll('#didomi-host')
-              .forEach( function(d) {
+              .forEach(function (d) {
                 d.setAttribute('aria-hidden', 'true');
                 d.style.display = 'none';
               });
@@ -168,7 +171,8 @@
 
       // appconsent
       if (!!window.__tcfapi) {
-        __tcfapi('deny', 2, () => {});
+        __tcfapi('deny', 2, () => {
+        });
       }
 
       // onetrust
@@ -212,7 +216,6 @@
         clearInterval(kick);
       }
 
-
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
       if (!!window.theShield) {
         fireEvent('#banner-cookie_customize', 'mousedown');
@@ -230,14 +233,14 @@
           elClick('.slshield-info__cta.slshield-info__cta-accept', () => clearInterval(kick));
         }
       }
-      
+
       // Sibbo
       if (!!window.SibboCMP && !!SibboCMP.isOpen()) {
         elClick('sibbo-cmp-layout .sibbo-panel__aside a.sibbo-cmp-button[data-nav="purposes"]', () => {
           elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="next"]', () => {
             elClick('sibbo-cmp-layout a#purposesNavLegInt', () => {
               elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="save-and-exit"]', () => {
-                 elClick('sibbo-cmp-layout a#purposesLegIntSaveAndExit', () => clearInterval(kick)
+                elClick('sibbo-cmp-layout a#purposesLegIntSaveAndExit', () => clearInterval(kick)
                 );
               });
             });
@@ -247,8 +250,8 @@
 
       //chandago / sfbx / appconsent
       if (!!window.appconsent && document.getElementById('appconsent') != null && !!appconsent.default && !!appconsent.default.isInitialised) {
-          appconsent.default.deny();
-          clearInterval(kick);
+        appconsent.default.deny();
+        clearInterval(kick);
       }
     } catch (except) {
       console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');
