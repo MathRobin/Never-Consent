@@ -1,3 +1,9 @@
+# 1.15.0
+
+## Features
+
+  - Support added for Iubenda
+
 # 1.14.0
 
 ## Features

@@ -253,14 +253,14 @@
         appconsent.default.deny();
         clearInterval(kick);
       }
-      
+
       // Iubenda
       if (!!window._iub && !!_iub.cs &&
-          !!_iub.cs.options && !!_iub.cs.options.callback
-          && !!_iub.cs.api &&_iub.cs.api.consentGiven) {
-          
-          _iub.cs.options.callback.onBannerShown = () => _iub.cs.api.consentGiven('rejectButtonClick');
-          clearInterval(kick);
+        !!_iub.cs.options && !!_iub.cs.options.callback
+        && !!_iub.cs.api && _iub.cs.api.consentGiven) {
+
+        _iub.cs.options.callback.onBannerShown = () => _iub.cs.api.consentGiven('rejectButtonClick');
+        clearInterval(kick);
       }
     } catch (except) {
       console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');

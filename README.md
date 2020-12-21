@@ -42,47 +42,49 @@ To push a new release, script use [jq](https://stedolan.github.io/jq/download/) 
 ## Test
 Here are a list of sites for each platform where you can try your PRs if you want. Don't hesitate to enrich this section:
 
-- Quantcast
-  - https://www.quantcast.com/
-- Didomi
-  - https://www.didomi.io
-  - https://www.fip.fr
+- AppConsent
+  - https://www.appconsent.io
+  - https://www.lyonmag.com/
+  - https://www.lefigaro.fr/
+- Axel Springer OIL Hub
+  - http://oil.axelspringer.com/
+- Chandago
+  - https://www.chandago.com/
+  - https://www.commentcamarche.net/
 - ConsentManager
   - https://www.consentmanager.net/
-- Osano cookieconsent
-  - https://cookieconsent.osano.com/
+- CookieBot
+  - https://www.cookiebot.com/
+  - https://training.zenika.com/
 - Cookie Law Info
   - https://www.cookielawinfo.com/
+- CreateIt
+  - https://www.createit.com/
 - Crownpeak
   - https://www.crownpeak.com/ (banner mode)
   - https://downdetector.fr/ (barrier mode)
+- Didomi
+  - https://www.didomi.io
+  - https://www.fip.fr
+- Kiprotect Klaro
+  - https://klaro.kiprotect.com/
+- Iubenda
+  - https://www.iubenda.com/
+- OneTrust
+  - https://www.onetrust.com/
+  - https://www.lepoint.fr/
+  - https://www.vanityfair.fr/
+- Orejime
+  - https://github.com/empreinte-digitale/orejime
+- Osano cookieconsent
+  - https://cookieconsent.osano.com/
+- Quantcast
+  - https://www.quantcast.com/
 - SirData
   - https://cmp.sirdata.com/
   - https://www.futura-sciences.com/
 - TarteAuCitron
   - https://opt-out.ferank.eu/
-- Chandago
-  - https://www.chandago.com/
-  - https://www.commentcamarche.net/
-- AppConsent
-  - https://www.appconsent.io
-  - https://www.lyonmag.com/
-  - https://www.lefigaro.fr/
-- OneTrust
-  - https://www.onetrust.com/
-  - https://www.lepoint.fr/
-  - https://www.vanityfair.fr/
-- CreateIt
-  - https://www.createit.com/
-- Kiprotect Klaro
-  - https://klaro.kiprotect.com/
-- Orejime
-  - https://github.com/empreinte-digitale/orejime
-- Axel Springer OIL Hub
-  - http://oil.axelspringer.com/
-- CookieBot
-  - https://www.cookiebot.com/
-  - https://training.zenika.com/
 
 ## Thanks to
 
