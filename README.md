@@ -2,6 +2,8 @@
 Never consent to any GDPR consent management platform. All permissions are immediatly refused.
 
 **/!\ IMPORTANT:** This extension completes uBlock, AdBlock & co, they don't serve the same objectives. We promote usage of adblockers in completion. Never-Consent will (try to) reject consent as possible, it will not block ads, it will not be able block all cookies if sites doesn't care whether you / never-consent said nope.
+
+#### Filterlist
 I recommend to add this list to uBlock in addition:
 - [Chrome](chrome-extension://cjpalhdlnbpafiamejdnhcphjbkeiagm/asset-viewer.html?url=https%3A%2F%2Fsecure.fanboy.co.nz%2Ffanboy-cookiemonster.txt&title=Anti-Cookie%20List&subscribe=1)
 - [Firefox](moz-extension://262b0a61-12d0-4fc5-96d7-5069f1b9fa63/asset-viewer.html?url=https%3A%2F%2Fsecure.fanboy.co.nz%2Ffanboy-cookiemonster.txt&title=Anti-Cookie%20List&subscribe=1)
