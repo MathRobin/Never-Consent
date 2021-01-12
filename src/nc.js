@@ -17,6 +17,14 @@
     }
   }
 
+  function getCookie (name) {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) {
+      return parts.pop().split(";").shift();
+    }
+  }
+
   function waitForElement (selector, callback, maybeTimer = false) {
     if (!eleWaiter) {
       eleWaiter = window.setInterval(() => {
@@ -176,7 +184,7 @@
       }
 
       // onetrust
-      if (!!window.OneTrust && window.OneTrust.RejectAll) {
+      if (!!window.OneTrust && window.OneTrust.RejectAll && !getCookie('OptanonAlertBoxClosed')) {
         window.OneTrust.RejectAll();
         if (didMoronUnderstood()) {
           clearInterval(kick);
