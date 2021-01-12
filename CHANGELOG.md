@@ -1,8 +1,14 @@
+# 1.15.1
+
+## Bug fixes
+
+- Fixed infinite loop for OneTrust, detected on https://learn.unity.com/, issue #70
+
 # 1.15.0
 
 ## Features
 
-  - Support added for Iubenda
+- Support added for Iubenda
 
 # 1.14.0
 
