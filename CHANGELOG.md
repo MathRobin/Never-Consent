@@ -1,3 +1,9 @@
+# 1.15.2
+
+## Bug fixes
+
+- Fixed scrollbar bug for some Orjime implmentations, detected on https://www.service-public.fr/, issue #81
+
 # 1.15.1
 
 ## Bug fixes

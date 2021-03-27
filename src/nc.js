@@ -206,15 +206,21 @@
         }
       }
 
-      // orejime
+				// orejime
       if (!!window.orejime) {
-        elClick('.orejime-Button--info', () => {
-          Object.keys(orejime.internals.manager.consents).forEach(ele => orejime.internals.manager.consents[ele] = false);
-          elClick('.orejime-Modal-saveButton', () => {
-            clearInterval(kick);
-          })
-        });
-      }
+				if (!!window.orejime.manager) {
+					elClick('.orejime-Button--info', () => {
+						Object.keys(orejime.internals.manager.consents).forEach(ele => orejime.internals.manager.consents[ele] = false);
+						elClick('.orejime-Modal-saveButton', () => {
+							clearInterval(kick);
+						});
+					});
+				} else {
+					elClick('.orejime-Button--decline', () => {
+						clearInterval(kick);
+					});
+				}
+			}
 
       // axel springer oil
       if (!!window.AS_OIL) {
