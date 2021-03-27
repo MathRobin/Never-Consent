@@ -1,3 +1,9 @@
+# 1.15.3
+
+## Bug fixes
+
+- Fixed infinite loop on some ConsentManager implementations, detected on https://www.pharmazeutische-zeitung.de, issue #78
+
 # 1.15.2
 
 ## Bug fixes

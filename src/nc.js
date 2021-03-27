@@ -1,4 +1,12 @@
 (function () {
+  const debug = true;
+
+  function log () {
+    if (debug) {
+      console.debug('[Never-Consent]', ...arguments);
+    }
+  }
+
   function kickQuantcast (mutations) {
     var qcReady = mutations.some(mutation => {
       return mutation.target.firstChild &&
@@ -12,6 +20,7 @@
   }
 
   function registerCookie (newCookie) {
+    log('registerCookie', newCookie);
     if (!document.cookie.indexOf(newCookie)) {
       document.cookie = newCookie;
     }
@@ -51,6 +60,7 @@
     targetParent = false,
     maybeTimer = false
   } = {}) {
+    log('elClick', selector, {targetParent, maybeTimer});
     waitForElement(selector, () => {
       if (targetParent) {
         document.querySelector(selector).parentNode.click();
@@ -99,6 +109,7 @@
     try {
       // Didomi
       if (!!window.Didomi && !!window.didomiOnReady) {
+        log('Didomi')
         window.didomiOnReady.push(function (Didomi) {
           if (Didomi.notice.isVisible() && !!Didomi.setUserDisagreeToAll) {
             Didomi.setUserDisagreeToAll();
@@ -114,28 +125,36 @@
 
       // consentmanager
       if (!!window.cmpmngr) {
-        window.cmpmngr.setConsentViaBtn(0);
+        log('consentmanager');
+        const status = window.cmpmngr.consentStatus();
 
-        // It has to be told multiple times "no" to understand "no"
-        if (didMoronUnderstood()) {
-          clearInterval(kick);
+        if (!status.consentData) {
+          window.cmpmngr.setConsentViaBtn(0);
+
+          // It has to be told multiple times "no" to understand "no"
+          if (didMoronUnderstood()) {
+            clearInterval(kick);
+          }
         }
       }
 
       // cookielawinfo
       if (!!window.CLI && !!window.CLI.reject_close) {
+        log('cookielawinfo');
         CLI.reject_close();
         clearInterval(kick);
       }
 
       // tarteaucitron
       if (!!window.tarteaucitron) {
+        log('tarteaucitron');
         tarteaucitron.userInterface.respondAll(false);
         clearInterval(kick);
       }
 
       // createit
       if (!!window.ct_ultimate_gdpr_cookie) {
+        log('createit');
         elClick('#ct-ultimate-gdpr-cookie-change-settings', () => {
           elClick('.ct-ultimate-gdpr-cookie-modal-slider [for="cookie0"]', () => {
             elClick('.ct-ultimate-gdpr-cookie-modal-btn.save a', () => {
@@ -147,6 +166,7 @@
 
       // cookiebot
       if (!!window.Cookiebot) {
+        log('cookiebot');
         elClick('#CybotCookiebotDialogBodyButtonDecline', () => {
           clearInterval(kick);
         });
@@ -154,6 +174,7 @@
 
       // crownpeak
       if (!!window.evidon && !!window.evidon.preferencesDialog) {
+        log('crownpeak dialog');
         elClick('.evidon-consent-button-text', () => {
           window.evidon.preferencesDialog.doWithdrawConsent();
           document.querySelector('#_evh-button').remove();
@@ -161,17 +182,20 @@
         });
       }
       if (!!window.evidon && !!window.evidon.barrier) {
+        log('crownpeak barrier');
         elClick('.evidon-barrier-cookiebutton', () => {
           console.error('[extension:Never-Consent] Sadly I can\'t do more for you, I just can display to you the right modal.');
           clearInterval(kick);
         }, {maybeTimer: 2000});
       }
       if (!!window.evidon && !!window.evidon.banner) {
+        log('crownpeak banner');
         console.error('[extension:Never-Consent] Evidon banner still not managed');
       }
 
       // sirdata
       if (!!window.Sddan && window.Sddan.cmpLoaded) {
+        log('sirdata');
         elClick('#sd-cmp #main_body button:nth-child(2)', () => {
           elClick('#sd-cmp #details_body + div button', () => clearInterval(kick));
         });
@@ -179,12 +203,14 @@
 
       // appconsent
       if (!!window.__tcfapi) {
+        log('appconsent');
         __tcfapi('deny', 2, () => {
         });
       }
 
       // onetrust
       if (!!window.OneTrust && window.OneTrust.RejectAll && !getCookie('OptanonAlertBoxClosed')) {
+        log('onetrust');
         window.OneTrust.RejectAll();
         if (didMoronUnderstood()) {
           clearInterval(kick);
@@ -193,6 +219,7 @@
 
       // klaro
       if (!!window.klaro) {
+        log('klaro');
         if (document.querySelector('.cn-decline')) {
           elClick('.cn-decline');
           clearInterval(kick);
@@ -206,24 +233,27 @@
         }
       }
 
-				// orejime
+      // orejime
       if (!!window.orejime) {
-				if (!!window.orejime.manager) {
-					elClick('.orejime-Button--info', () => {
-						Object.keys(orejime.internals.manager.consents).forEach(ele => orejime.internals.manager.consents[ele] = false);
-						elClick('.orejime-Modal-saveButton', () => {
-							clearInterval(kick);
-						});
-					});
-				} else {
-					elClick('.orejime-Button--decline', () => {
-						clearInterval(kick);
-					});
-				}
-			}
+        if (!!window.orejime.manager) {
+          log('orejime manager');
+          elClick('.orejime-Button--info', () => {
+            Object.keys(orejime.internals.manager.consents).forEach(ele => orejime.internals.manager.consents[ele] = false);
+            elClick('.orejime-Modal-saveButton', () => {
+              clearInterval(kick);
+            });
+          });
+        } else {
+          log('orejime banner');
+          elClick('.orejime-Button--decline', () => {
+            clearInterval(kick);
+          });
+        }
+      }
 
       // axel springer oil
       if (!!window.AS_OIL) {
+        log('axel springer oil');
         AS_OIL.triggerOptOut();
         AS_OIL.showPreferenceCenter();
         elClick('.as-oil__btn-optin.as-js-optin[data-context="YES"]');
@@ -232,6 +262,7 @@
 
       // platform behind seloger.com, french flat search engine, still don't know wich one it is
       if (!!window.theShield) {
+        log('theShield');
         fireEvent('#banner-cookie_customize', 'mousedown');
 
         const switchBoxes = document.querySelectorAll('.slshield-switch input');
@@ -250,6 +281,7 @@
 
       // Sibbo
       if (!!window.SibboCMP && !!SibboCMP.isOpen()) {
+        log('Sibbo');
         elClick('sibbo-cmp-layout .sibbo-panel__aside a.sibbo-cmp-button[data-nav="purposes"]', () => {
           elClick('sibbo-cmp-layout a.sibbo-cmp-button[data-button-reject-all][data-left="next"]', () => {
             elClick('sibbo-cmp-layout a#purposesNavLegInt', () => {
@@ -264,6 +296,7 @@
 
       //chandago / sfbx / appconsent
       if (!!window.appconsent && document.getElementById('appconsent') != null && !!appconsent.default && !!appconsent.default.isInitialised) {
+        log('chandago / sfbx / appconsent');
         appconsent.default.deny();
         clearInterval(kick);
       }
@@ -272,7 +305,7 @@
       if (!!window._iub && !!_iub.cs &&
         !!_iub.cs.options && !!_iub.cs.options.callback
         && !!_iub.cs.api && _iub.cs.api.consentGiven) {
-
+        log('iubenda');
         _iub.cs.options.callback.onBannerShown = () => _iub.cs.api.consentGiven('rejectButtonClick');
         clearInterval(kick);
       }
@@ -284,6 +317,7 @@
 
   const currentDomain = domains[location.hostname];
   if (currentDomain) {
+    log('currentDomain', currentDomain);
     document.querySelector(currentDomain).remove();
     clearInterval(kick);
   }
