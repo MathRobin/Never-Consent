@@ -28,11 +28,11 @@ No more "Do you accept ?" !
 ## Install it
 
 - For [Chrome and chromium-based](https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb)
-- For [Firefox](https://addons.mozilla.org/fr/firefox/addon/never-consent/)
+- For [Firefox](https://addons.mozilla.org/firefox/addon/never-consent/)
 - For [Edge](https://chrome.google.com/webstore/detail/never-consent/pgahndjfiejekcbidhejmpplgdhejdpb)
 
 Not available
-- For [Firefox Android](https://addons.mozilla.org/fr/android/addon/never-consent/) (see [#48](https://github.com/MathRobin/Never-Consent/issues/48))
+- For [Firefox Android](https://addons.mozilla.org/android/addon/never-consent/) (see [#48](https://github.com/MathRobin/Never-Consent/issues/48))
 - For Safari: help needed
 
 ## Contribute
