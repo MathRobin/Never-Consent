@@ -1,6 +1,6 @@
 {
   "name": "never-consent",
-  "version": "",
+  "version": "1.15.4",
   "description": "Never consent to any GDPR consent management platform",
   "main": "manifest.json",
   "scripts": {
