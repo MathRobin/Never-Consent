@@ -1,4 +1,4 @@
-THIS PROJECT IS NOT MAINTAINED ANYMORE. Don't hesitate to fork it. I don't have enough time and energy to continue in parallel of my work and my life of husband and father of two. I'll be happy to be aware that somebody have forked it for a better future. 🤎 on all of you
+***THIS PROJECT IS NOT MAINTAINED ANYMORE.*** Don't hesitate to fork it. I don't have enough time and energy to continue in parallel of my work and my life of husband and father of two. I'll be happy to be aware that somebody have forked it for a better future. 🤎 on all of you
 
 # Never-Consent
 Never consent to any GDPR consent management platform. All permissions are immediatly refused.
