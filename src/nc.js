@@ -309,6 +309,13 @@
         _iub.cs.options.callback.onBannerShown = () => _iub.cs.api.consentGiven('rejectButtonClick');
         clearInterval(kick);
       }
+      // LiveRamp
+      if (!!window.__tcfapi) {
+        log('liveramp');
+        __tcfapi('reject', 2, () => {
+          __tcfapi('toggleConsentTool', 2, null, false);
+        });
+      }
     } catch (except) {
       console.error('[extension:Never-Consent] encountered a problem, please open an issue here https://github.com/MathRobin/Never-Consent/issues');
       console.error('[extension:Never-Consent]', except);

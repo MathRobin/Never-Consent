@@ -22,6 +22,7 @@ Automatically refuse consent to sites which uses those platforms :
 - [Orejime](https://github.com/empreinte-digitale/orejime)
 - [Axel Springer OIL Hub](http://oil.axelspringer.com/)
 - [Cybot CookieBot](https://www.cookiebot.com/)
+- [LiveRamp](https://liveramp.com/)
 
 No more "Do you accept ?" !
 
@@ -71,6 +72,8 @@ Here are a list of sites for each platform where you can try your PRs if you wan
   - https://www.fip.fr
 - Kiprotect Klaro
   - https://klaro.kiprotect.com/
+- LiveRamp
+  - https://liveramp.com/
 - Iubenda
   - https://www.iubenda.com/
 - OneTrust
